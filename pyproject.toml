@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lil_buff_writer"
-version = "0.1.0"
+version = "0.1.1"
 description = "Buffer writing utility package"
 authors = [
     { name = "Matthew Taylor", email = "matthew.taylor.andre@gmail.com"}
@@ -28,3 +28,10 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-asyncio", "black"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_default_fixture_loop_scope = "function"
